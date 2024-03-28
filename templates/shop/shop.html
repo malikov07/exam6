@@ -13,8 +13,8 @@
             </div>
             <div class="modal-body d-flex align-items-center">
                 <div class="input-group w-75 mx-auto d-flex">
-                    <form action="" class="input-group w-75 mx-auto d-flex">
-                    
+                    <form action="{% url 'shop' %}" class="input-group w-75 mx-auto d-flex">
+
                         <input type="search" class="form-control col-md-7 p-3" name="search" placeholder="keywords"
                             aria-describedby="search-icon-1">
                         <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"> </i></span>
@@ -187,10 +187,18 @@
                                             <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">{{prod.new_price}} /
                                                     {{prod.quantity}}</p>
-                                                <a href="#"
+                                                {% if request.user.is_authenticated %}
+
+                                                <a href="{% url 'add-to-cart' prod.id user.id %}"
                                                     class="btn border border-secondary rounded-pill px-3 text-primary"><i
                                                         class="fa fa-shopping-bag me-2 text-primary"></i> Add to
                                                     cart</a>
+
+                                                {% else %}
+                                                    <a href="{% url 'login-page' %}" class="btn border border-secondary rounded-pill px-3 text-primary"><i
+                                                            class="fa fa-shopping-bag me-2 text-primary"></i> Add to
+                                                        cart</a>
+                                                {% endif %}
                                             </div>
                                         </div>
                                     </div>

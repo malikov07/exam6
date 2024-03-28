@@ -16,7 +16,7 @@ class LoginPageView(View):
             login(request, user)
             context = {"user": user}
 
-            return render(request, "home.html", context)
+            return render(request, "home/home.html", context)
         else:
             print("errorsss")
             context = {"form": login_form}
@@ -45,3 +45,9 @@ class RegisterPageView(View):
             print("ERRor")
             context = {"form": user}
             return render(request, "users/register.html", context)
+
+
+class LogOutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect("home")
