@@ -9,6 +9,8 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
 
+    <link rel="stylesheet" href="{% static 'mdeditor/css/editormd.min.css' %}">
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -285,6 +287,18 @@
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>
+
+    <script src="{% static 'mdeditor/js/editormd.min.js' %}"></script>
+    <script src="{% static 'mdeditor/js/jquery.min.js' %}"></script>
+    <script>
+        $(function () {
+            $('.markdown-editor').each(function () {
+                var editor = editormd($(this).attr('id'), {
+                    path: '{% static "mdeditor/lib/" %}', // Update path to the lib
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
