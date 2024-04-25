@@ -3,6 +3,7 @@ defusedxml==0.7.1
 diff-match-patch==20230430
 Django==5.0.3
 django-import-export==3.3.7
+django-mdeditor==0.1.20
 et-xmlfile==1.1.0
 MarkupPy==1.14
 odfpy==1.4.1
