@@ -19,9 +19,9 @@ class Category(models.Model):
 
 
 class QuantityRole(models.TextChoices):
-    KILO = "kg", "kilogram"
-    LITER = "l", "liter"
-    PIECE = "p", "piece"
+    kilo = ("kg", "kilogram")
+    liter = ("l", "liter")
+    piece = ("p", "piece")
 
 
 class Product(models.Model):
@@ -31,7 +31,7 @@ class Product(models.Model):
     old_price = models.FloatField(null=True)
     new_price = models.FloatField()
     quantity = models.CharField(
-        max_length=40, choices=QuantityRole.choices, default=QuantityRole.KILO
+        max_length=40, choices=QuantityRole.choices, default=QuantityRole.kilo
     )
     rating = models.FloatField()
     origin_country = models.ForeignKey(Country, on_delete=models.SET_NULL, null=True)
