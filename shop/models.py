@@ -19,9 +19,9 @@ class Category(models.Model):
 
 
 class QuantityRole(models.TextChoices):
-    KILO = "kg", "kilogram"
-    LITER = "l", "liter"
-    PIECE = "p", "piece"
+    KILO = ("kg", "kilogram")
+    LITER = ("l", "liter")
+    PIECE = ("p", "piece")
 
 
 class Product(models.Model):
