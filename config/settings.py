@@ -31,7 +31,7 @@ SECRET_KEY = getenv("DB_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["161.35.36.37"]
+ALLOWED_HOSTS = ["206.189.120.0"]
 
 
 # Application definition
