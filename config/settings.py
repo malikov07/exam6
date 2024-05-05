@@ -31,7 +31,7 @@ SECRET_KEY = getenv("DB_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["206.189.120.0"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "import_export",
     "mdeditor",
+    "music",
+    "rest_framework",
+    "rest_framework.authtoken",
 
     "home",
     "shop",
